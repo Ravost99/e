@@ -1,0 +1,8 @@
+body {
+    background: #031C1E;
+    overflow: hidden;
+}
+iframe {
+    display: block;
+    margin: 0 auto;
+}
