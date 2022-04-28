@@ -10,6 +10,11 @@
   </head>
   <body>
     <!--<script src="script.js"></script>-->
+    <script>
+      window.onbeforeunload = function(event) {
+        return confirm("Confirm refresh");
+      };
+    </script>
     <br><br>
     <iframe align="center" class=" no-select" width="1000px" height="700px" src="https://powerline.coolmathgames.com/?r=17g0" frameborder="0" id="html5game" scrolling="no" style=" -webkit-transform:scale(1.1); -moz-transform:scale(1.1); -o-transform:scale(1.1); -ms-transform:scale(1.1);"></iframe>
   </body>
