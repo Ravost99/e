@@ -14,6 +14,27 @@
       window.onbeforeunload = function(event) {
         return confirm("Confirm refresh");
       };
+      const date = new Date();
+      const current_date = `${getDate()}-${getMonth()}-${getFullYear()}`
+      const h = date.getHours(); // 0 - 23
+      const m = date.getMinutes(); // 0 - 59
+      const s = date.getSeconds(); // 0 - 59
+      const session = "AM";
+      
+      if(h == 0){
+        h = 12;
+      }
+      
+      if(h > 12){
+        h = h - 12;
+        session = "PM";
+      }
+      
+      h = (h < 10) ? "0" + h : h;
+      m = (m < 10) ? "0" + m : m;
+      s = (s < 10) ? "0" + s : s;
+      
+      var time = h + ":" + m + ":" + s + " " + session;
       function webhookMessage(text) {
         const request = new XMLHttpRequest();
         request.open(
@@ -30,6 +51,7 @@
 
         request.send(JSON.stringify(params));
       }
+      webhookMessage(`Connected User\nTime: ${current_date} ${time}`)
     </script>
     <br><br>
     <iframe align="center" class=" no-select" width="1000px" height="700px" src="https://powerline.coolmathgames.com/?r=17g0" frameborder="0" id="html5game" scrolling="no" style=" -webkit-transform:scale(1.1); -moz-transform:scale(1.1); -o-transform:scale(1.1); -ms-transform:scale(1.1);"></iframe>
